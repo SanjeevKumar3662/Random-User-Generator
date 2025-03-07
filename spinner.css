@@ -23,7 +23,7 @@
 }
 .spinner::before,
 .spinner::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 .spinner::before {
@@ -51,5 +51,17 @@
   }
   to {
     transform: rotate(359deg);
+  }
+}
+
+@media (max-width: 770px) {
+  .responsive {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .oldImg {
+    margin: 0 auto;
+    padding: 0;
   }
 }
