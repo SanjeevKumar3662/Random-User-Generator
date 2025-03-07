@@ -7,12 +7,14 @@ const oldAge = document.querySelector("#oldAge");
 const genBtn = document.querySelector("#generate");
 
 const getDataAndUpdateDOM = () => {
+  showSpinner();
   fetch("https://randomuser.me/api/")
     .then((response) => response.json())
     .then((data) => {
       const info = data.results[0];
 
-      // console.log(info);
+      hideSpinner();
+
       oldImg.src = `${info.picture.large}`;
 
       oldName.firstChild.replaceWith(
@@ -43,6 +45,14 @@ const getDataAndUpdateDOM = () => {
         document.createTextNode(`Age: ${info.dob.age}`)
       );
     });
+};
+
+const showSpinner = () => {
+  document.querySelector(".spinner").style.display = "block";
+};
+
+const hideSpinner = () => {
+  document.querySelector(".spinner").style.display = "none";
 };
 
 genBtn.addEventListener("click", getDataAndUpdateDOM);
