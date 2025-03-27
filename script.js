@@ -23,16 +23,16 @@ const getDataAndUpdateDOM = () => {
         )
       );
 
-      oldEmail.firstChild.replaceWith(
-        document.createTextNode(`Email: ${info.email}`)
-      );
+      // oldEmail.firstChild.replaceWith(
+      //   document.createTextNode(`Email: ${info.email}`)
+      // );
 
       oldPhone.firstChild.replaceWith(
         document.createTextNode(`Phone: ${info.phone}`)
       );
 
       oldEmail.firstChild.replaceWith(
-        document.createTextNode(`Name: ${info.email}`)
+        document.createTextNode(`Email: ${info.email}`)
       );
 
       oldLocation.firstChild.replaceWith(
